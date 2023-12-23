@@ -1,0 +1,8 @@
+---
+#
+# Ansible managed
+#
+repository:
+  description: Setup the [Bareos](https://www.bareos.com/) repositories.
+  homepage: https://buluma.github.io/
+  topics: backup, bareos, infrastructure, linux, storage, system, tools, ansible, molecule, tox, playbook

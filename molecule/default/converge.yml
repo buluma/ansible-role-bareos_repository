@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: ansible-role-bareos_repository
+      bareos_repository_enable_tracebacks: yes
