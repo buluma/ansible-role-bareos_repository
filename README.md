@@ -60,10 +60,10 @@ bareos_repository_release: current
 
 # The version of Bareos to install.
 # Only affects `bareos_repository_type: subscription`.
-bareos_repository_version: 22
+bareos_repository_version: 23
 
 # You can enable tracebacks for troubleshooting purposes.
-bareos_repository_enable_tracebacks: no
+bareos_repository_enable_tracebacks: false
 ```
 
 ## [Requirements](#requirements)
@@ -99,9 +99,9 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 |---------|----|
 |[Debian](https://hub.docker.com/r/buluma/debian)|bookworm, bullseye, buster|
 |[EL](https://hub.docker.com/r/buluma/enterpriselinux)|7, 8, 9|
-|[Fedora](https://hub.docker.com/r/buluma/fedora)|38|
+|[Fedora](https://hub.docker.com/r/buluma/fedora)|38, 39|
 |[opensuse](https://hub.docker.com/r/buluma/opensuse)|all|
-|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|jammy, focal|
+|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|jammy|
 
 The minimum version of Ansible required is 2.12, tests have been done to:
 
