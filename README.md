@@ -14,12 +14,12 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 ---
 - name: Converge
   hosts: all
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
 
   roles:
     - role: buluma.bareos_repository
-      bareos_repository_enable_tracebacks: yes
+      bareos_repository_enable_tracebacks: true
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-bareos_repository/blob/master/molecule/default/prepare.yml):
@@ -28,8 +28,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: Prepare
   hosts: all
-  become: yes
-  gather_facts: no
+  become: true
+  gather_facts: false
 
   roles:
     - role: buluma.bootstrap
@@ -99,9 +99,9 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 |---------|----|
 |[Debian](https://hub.docker.com/r/buluma/debian)|bookworm, bullseye, buster|
 |[EL](https://hub.docker.com/r/buluma/enterpriselinux)|7, 8, 9|
-|[Fedora](https://hub.docker.com/r/buluma/fedora)|38, 39|
+|[Fedora](https://hub.docker.com/r/buluma/fedora)|38, 39, 40|
 |[opensuse](https://hub.docker.com/r/buluma/opensuse)|all|
-|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|jammy|
+|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|jammy, noble|
 
 The minimum version of Ansible required is 2.12, tests have been done to:
 
