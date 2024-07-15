@@ -10,26 +10,22 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-        - bookworm
         - bullseye
         - buster
     - name: EL
       versions:
-        - "7"
         - "8"
         - "9"
     - name: Fedora
       versions:
         - "38"
         - "39"
-        - "40"
     - name: opensuse
       versions:
         - all
     - name: Ubuntu
       versions:
         - jammy
-        - noble
 
   galaxy_tags:
     - backup
