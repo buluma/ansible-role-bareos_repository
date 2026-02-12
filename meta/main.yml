@@ -1,39 +1,32 @@
----
 galaxy_info:
   author: buluma
   role_name: bareos_repository
   description: Setup the [Bareos](https://www.bareos.com/) repositories.
   license: Apache-2.0
   company: ShadowNet
-  min_ansible_version: "2.12"
-
+  min_ansible_version: '2.12'
   platforms:
-    - name: Debian
-      versions:
-        - bullseye
-        - buster
-    - name: EL
-      versions:
-        - "8"
-        - "9"
-    - name: Fedora
-      versions:
-        - "38"
-        - "39"
-    - name: opensuse
-      versions:
-        - all
-    - name: Ubuntu
-      versions:
-        - jammy
-
+  - name: Debian
+    versions:
+    - all
+  - name: EL
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: opensuse
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
   galaxy_tags:
-    - backup
-    - bareos
-    - infrastructure
-    - linux
-    - storage
-    - system
-    - tools
-
+  - backup
+  - bareos
+  - infrastructure
+  - linux
+  - storage
+  - system
+  - tools
 dependencies: []
