@@ -16,12 +16,15 @@ _bareos_repository_url:
     Suse: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/SUSE_{{ ansible_distribution_major_version }}"
     Ubuntu: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/xUbuntu_{{ ansible_distribution_version }}"
   subscription:
-    default: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ bareos_repository_version }}/{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
-    Fedora: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ bareos_repository_version }}/{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+    default: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ bareos_repository_version }}/{{ ansible_distribution }}_{{ ansible_distribution_major_version
+      }}"
+    Fedora: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ bareos_repository_version }}/{{ ansible_distribution }}_{{ ansible_distribution_major_version
+      }}"
     RedHat: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ bareos_repository_version }}/EL_{{ ansible_distribution_major_version }}"
     Suse: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ bareos_repository_version }}/SUSE_{{ ansible_distribution_major_version }}"
     Ubuntu: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ bareos_repository_version }}/xUbuntu_{{ ansible_distribution_version }}"
-bareos_repository_url: "{{ _bareos_repository_url[bareos_repository_type][ansible_distribution] | default(_bareos_repository_url[bareos_repository_type][ansible_os_family] | default(_bareos_repository_url[bareos_repository_type]['default'])) }}"
+bareos_repository_url: "{{ _bareos_repository_url[bareos_repository_type][ansible_distribution] | default(_bareos_repository_url[bareos_repository_type][ansible_os_family]
+  | default(_bareos_repository_url[bareos_repository_type]['default'])) }}"
 
 # Debian and RedHat use a different structure.
 _bareos_repository_gpg_key:
@@ -56,4 +59,5 @@ _bareos_repository_debug_required_packages:
     - procps
   RedHat:
     - procps-ng
-bareos_repository_debug_required_packages: "{{ _bareos_repository_debug_required_packages[ansible_os_family] | default(_bareos_repository_debug_required_packages['default']) }}"
+bareos_repository_debug_required_packages: "{{ _bareos_repository_debug_required_packages[ansible_os_family] | default(_bareos_repository_debug_required_packages['default'])
+  }}"
