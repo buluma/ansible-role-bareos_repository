@@ -1,5 +1,4 @@
 ---
-
 - name: assert | Test bareos_repository_type
   ansible.builtin.assert:
     that:
