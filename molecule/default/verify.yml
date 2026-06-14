@@ -13,7 +13,7 @@
         - bareos
         - bareos-dbg
     bareos_repository_verify_packages:
-      "{{ _bareos_repository_verify_packages[ansible_os_family]
+      "{{ _bareos_repository_verify_packages[ansible_facts.os_family]
       | default(_bareos_repository_verify_packages['default']) }}"
 
   tasks:
