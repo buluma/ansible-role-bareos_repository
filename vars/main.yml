@@ -10,23 +10,21 @@ bareos_repository_base_url: "{{ _bareos_repository_base_url[bareos_repository_ty
 # Different distributions have different repository URLs.
 _bareos_repository_url:
   community:
-    default: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_major_version'] }}"
+    default: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_major_version']
+      }}"
     Fedora: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_major_version'] }}"
     RedHat: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/EL_{{ ansible_facts['distribution_major_version'] }}"
     Suse: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/SUSE_{{ ansible_facts['distribution_major_version'] }}"
     Ubuntu: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/xUbuntu_{{ ansible_facts['distribution_version'] }}"
   subscription:
-    default:
-      "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ bareos_repository_version }}/{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_major_version']
+    default: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ bareos_repository_version }}/{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_major_version']
       }}"
-    Fedora:
-      "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ bareos_repository_version }}/{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_major_version']
+    Fedora: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ bareos_repository_version }}/{{ ansible_facts['distribution'] }}_{{ ansible_facts['distribution_major_version']
       }}"
     RedHat: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ bareos_repository_version }}/EL_{{ ansible_facts['distribution_major_version'] }}"
     Suse: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ bareos_repository_version }}/SUSE_{{ ansible_facts['distribution_major_version'] }}"
     Ubuntu: "{{ bareos_repository_base_url }}/{{ bareos_repository_release }}/{{ bareos_repository_version }}/xUbuntu_{{ ansible_facts['distribution_version'] }}"
-bareos_repository_url:
-  "{{ _bareos_repository_url[bareos_repository_type][ansible_facts['distribution']] | default(_bareos_repository_url[bareos_repository_type][ansible_facts['os_family']]
+bareos_repository_url: "{{ _bareos_repository_url[bareos_repository_type][ansible_facts['distribution']] | default(_bareos_repository_url[bareos_repository_type][ansible_facts['os_family']]
   | default(_bareos_repository_url[bareos_repository_type]['default'])) }}"
 
 # Debian and RedHat use a different structure.
@@ -62,6 +60,5 @@ _bareos_repository_debug_required_packages:
     - procps
   RedHat:
     - procps-ng
-bareos_repository_debug_required_packages:
-  "{{ _bareos_repository_debug_required_packages[ansible_facts['os_family']] | default(_bareos_repository_debug_required_packages['default'])
+bareos_repository_debug_required_packages: "{{ _bareos_repository_debug_required_packages[ansible_facts['os_family']] | default(_bareos_repository_debug_required_packages['default'])
   }}"
