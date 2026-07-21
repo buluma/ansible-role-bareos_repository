@@ -143,8 +143,14 @@
       ansible.builtin.package:
         name: "{{ bareos_repository_debug_required_packages }}"
 
+    - name: Check if ptrace_scope sysctl is available
+      ansible.builtin.stat:
+        path: /proc/sys/kernel/yama/ptrace_scope
+      register: bareos_repository_ptrace_scope_stat
+
     - name: Disable ptrace_scope
       ansible.posix.sysctl:
         name: kernel.yama.ptrace_scope
         value: "0"
         sysctl_set: true
+      when: bareos_repository_ptrace_scope_stat.stat.exists
