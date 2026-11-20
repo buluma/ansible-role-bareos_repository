@@ -74,7 +74,8 @@
 
     # deb_repo is a one-line "deb [options] URI SUITE [COMPONENT...]" string,
     # split here into the parts deb822_repository needs.
-    - name: Add repository (apt)
+    # The noqa is there because ansible-lint can't validate the templated types.
+    - name: Add repository (apt)  # noqa: args[module]
       ansible.builtin.deb822_repository:
         name: "{{ item.name }}"
         types: "{{ _bareos_repository_deb_types }}"
